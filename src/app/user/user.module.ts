@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { UserRoutingModule } from './user-routing.module';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,6 +12,8 @@ import { UserListComponent } from './user-list/user-list.component';
   imports: [
     CommonModule,
     UserRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
   ]

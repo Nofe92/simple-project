@@ -1,31 +1,36 @@
 <!-- The above form looks like this -->
-<form>
-  <span>HELLO</span>
+<form [formGroup]="form">
     <div class="row">
-      <div class="six columns">
+      <div class="ten columns">
         <label for="nameInput">Name</label>
-        <input class="u-full-width" type="text" placeholder="Name Surname" id="nameInput">
+        <input formControlName="name" class="u-full-width" type="text" placeholder="Name Surname" id="nameInput">
       </div>
       <div class="two columns">
         <label for="ageInput">Age</label>
-        <input class="u-full-width" type="text" id="ageInput">
-      </div>
-      <div class="two columns">
-        <label for="sexInput">Sex</label>
-        <select class="u-full-width" id="sexInput">
-          <option value="Option 1">Male</option>
-          <option value="Option 2">Female</option>
-        </select>
+        <input formControlName="age" class="u-full-width" type="text" id="ageInput">
       </div>
     </div>
     <div class="row">
-
+      <div class="two columns">
+        <label for="sexInput">Sex</label>
+        <select formControlName="sex" class="u-full-width" id="sexInput">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="ten columns">
+          <label for="locationInput">Location</label>
+          <input formControlName="location" class="u-full-width" type="text" placeholder="via paerozzo" id="locationInput">
+      </div>
     </div>
-    <label for="generalInfo">General Info</label>
-    <textarea class="u-full-width" placeholder="Hi I'm Dave …" id="generalInfo"></textarea>
-    <label class="example-send-yourself-copy">
-      <input type="checkbox">
-      <span class="label-body">Send a copy to yourself</span>
-    </label>
-    <input class="button-primary" type="submit" value="Submit">
-  </form>
+
+    <div class="row">
+      <label for="generalInfo">General Info</label>
+      <textarea formControlName="generalInfo" class="u-full-width" placeholder="Hi I'm Dave …" id="generalInfo"></textarea>
+    </div>
+
+    <div class="row">
+      <input class="button-primary" type="submit" value="Submit">
+    </div>
+
+</form>
