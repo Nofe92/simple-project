@@ -11,6 +11,6 @@ export class UserService {
   constructor(readonly http: HttpClient) { }
 
   returnUsers(): Observable<User[]> {
-    return this.http.get<User[]>('http://localhost:3000/users');
+    return this.http.get<User[]>('http://10.69.69.196:3000/users');
   }
 }

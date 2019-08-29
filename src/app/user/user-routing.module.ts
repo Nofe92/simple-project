@@ -10,8 +10,12 @@ const routes: Routes = [
     redirectTo: 'details'
   },
   {
-   path: 'details',
+   path: 'list',
    component: UserListComponent,
+  },
+  {
+    path: '/details',
+    component: UserDetailsComponent,
   }
 ];
 

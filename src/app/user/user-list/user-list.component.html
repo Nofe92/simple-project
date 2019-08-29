@@ -8,11 +8,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Dave Gamache</td>
-            <td>26</td>
-            <td>Male</td>
-            <td>San Francisco</td>
+          <tr *ngFor="let user of users;">
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.sex}}</td>
+            <td>{{user.location}}</td>
           </tr>
         </tbody>
 </table>
