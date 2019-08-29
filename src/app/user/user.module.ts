@@ -10,7 +10,7 @@ import { UserListComponent } from './user-list/user-list.component';
   declarations: [UserDetailsComponent, UserListComponent],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
   ],
   exports: [
   ]
