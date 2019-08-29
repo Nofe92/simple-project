@@ -7,14 +7,10 @@ import { UserListComponent } from './user-list/user-list.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'details'
+    component: UserListComponent,
   },
   {
-   path: 'list',
-   component: UserListComponent,
-  },
-  {
-    path: '/details',
+    path: ':id/details',
     component: UserDetailsComponent,
   }
 ];
