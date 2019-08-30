@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { map, tap, share } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-view',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserViewComponent implements OnInit {
 
-  constructor() { }
+  userID = this.router.params.pipe(
+    tap(console.log),
+    map( (params: { id: number}) => params.id),
+  );
+
+
+  constructor(
+    readonly router: ActivatedRoute) { }
 
   ngOnInit() {
   }

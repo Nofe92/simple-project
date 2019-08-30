@@ -8,7 +8,11 @@ import { UserViewComponent } from './user-view/user-view.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'list'
+    component: UserListComponent,
+  },
+  {
+    path: ':id',
+    component: UserViewComponent,
   },
   {
     path: 'view',
@@ -18,10 +22,6 @@ const routes: Routes = [
    path: 'list',
    component: UserListComponent,
   },
-  {
-    path: ':id/details',
-    component: UserDetailsComponent,
-  }
 ];
 
 @NgModule({

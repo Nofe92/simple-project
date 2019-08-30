@@ -9,7 +9,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let user of users;">
-            <td><a [routerLink]="user.id + '/details'">{{user.name}}</a></td>
+            <td><a [routerLink]="'../' + user.id">{{user.name}}</a></td>
             <td>{{user.age}}</td>
             <td>{{user.sex}}</td>
             <td>{{user.location}}</td>
