@@ -1,6 +1,10 @@
 <!-- The above form looks like this -->
-<form [formGroup]="form">
+<form [formGroup]="form" (submit)="saveUser()">
     <div class="row">
+      <!-- <div class="ten columns">
+          <label for="nameInput">ID</label>
+          <span>{{ this.form.get('id').value}}</span>
+      </div> -->
       <div class="ten columns">
         <label for="nameInput">Name</label>
         <input formControlName="name" class="u-full-width" type="text" placeholder="Name Surname" id="nameInput">

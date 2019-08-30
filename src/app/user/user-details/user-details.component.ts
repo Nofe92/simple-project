@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { UserService } from '../user.service';
+import { User } from '../user';
+import { ActivatedRouteSnapshot, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-user-details',
@@ -10,12 +14,17 @@ export class UserDetailsComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(readonly fb: FormBuilder) {
+  constructor(
+    readonly fb: FormBuilder,
+    readonly userService: UserService,
+    readonly router: ActivatedRoute,
+    ) {
     this.form = this.fb.group(
       {
-        name: ['default name'],
-        age: [22],
-        sex: ['male'],
+        id: [''],
+        name: [''],
+        age: [],
+        sex: [''],
         location: [''],
         generalInfo: [''],
       }
@@ -23,6 +32,13 @@ export class UserDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.userService.returnUser(this.router.snapshot.params.id).subscribe(user => {
+      this.form.patchValue(user);
+    });
+  }
+
+  saveUser() {
+    this.userService.saveUser({ ...this.form.value}).subscribe( user => this.form.patchValue(user));
   }
 
 }
