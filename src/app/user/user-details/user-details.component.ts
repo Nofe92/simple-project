@@ -14,8 +14,6 @@ export class UserDetailsComponent implements OnInit {
 
   form: FormGroup;
 
-  user: User;
-
   constructor(
     readonly fb: FormBuilder,
     readonly userService: UserService,
@@ -23,6 +21,7 @@ export class UserDetailsComponent implements OnInit {
     ) {
     this.form = this.fb.group(
       {
+        id: [''],
         name: [''],
         age: [],
         sex: [''],
@@ -36,6 +35,10 @@ export class UserDetailsComponent implements OnInit {
     this.userService.returnUser(this.router.snapshot.params.id).subscribe(user => {
       this.form.patchValue(user);
     });
+  }
+
+  saveUser() {
+    this.userService.saveUser({ ...this.form.value}).subscribe( user => this.form.patchValue(user));
   }
 
 }
